@@ -7,37 +7,26 @@
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
 * Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[modified]: ./test_images_output/solidWhiteCurve.jpg
-[gray]: ./test_images_output/solidWhiteCurve_gray.jpg "Grayscale"
-[blur]: ./test_images_output/solidWhiteCurve_blur.jpg "Grayscale"
-[canny]: ./test_images_output/solidWhiteCurve_edges.jpg "Grayscale"
-[region]: ./test_images_output/solidWhiteCurve_region.jpg "Grayscale"
-[lines]: ./test_images_output/solidWhiteCurve_lines.jpg
-[line_image]: ./test_images_output/solidWhiteCurve_line_img.jpg
 ---
 
-### Reflection
+## Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 Before modifying the `draw_lines()` function, my pipeline consisted of 6 steps:
 
 1. Convert the image to grayscale
-![Grayscale transformation][gray]
+![Grayscale transformation](./test_images_output/solidWhiteCurve_gray.jpg)
 2. Blur the image using gaussian method
-![Blur image][blur]
+![Blur image](./test_images_output/solidWhiteCurve_blur.jpg)
 3. Apply the Canny edge detection to find the image edge
-![Edges][canny]
+![Edges](./test_images_output/solidWhiteCurve_edges.jpg)
 4. Use a polygon to get the interested region containing the lane lines
-![Region][region]
+![Region](./test_images_output/solidWhiteCurve_region.jpg)
 5. Apply hough transformation to get the lines on the targeted region
-![lines][lines]
+![lines](./test_images_output/solidWhiteCurve_lines.jpg)
 6. draw the lines on the original image
-![line draw on image][line_image]
+![line draw on image](./test_images_output/solidWhiteCurve_line_img.jpg)
 
 
 Making modification on the `draw_lines()` function enables the program to interpolate the points on the lane lines and draw two solid lines on the lane lines.
@@ -50,11 +39,10 @@ I modified the `draw_lines()` function by taking the following steps:
 4. After getting the coefficients, draw each line using two points. One point is calculated using the intersection of the lane line and the bottom line where it's y value is equal to hight of the image - 540. The another point calculated is using the smallest y value in each set of points.
 5. Use the draw function in opencv to draw the two lines on the image. Please see the following image below for the modified `draw_line()` function. In my code, the modified `draw_line()` function is renamed to `draw_lane_line()`.
 
-![Modified draw line][modified]
+![Modified draw line](./test_images_output/solidWhiteCurve.jpg)
 
 
-
-###2. Identify potential shortcomings with your current pipeline
+### 2. Identify potential shortcomings with your current pipeline
 
 
 There are several potential shortcomings with the current pipeline:
