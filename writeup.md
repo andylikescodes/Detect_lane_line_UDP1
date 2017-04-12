@@ -52,7 +52,7 @@ There are several potential shortcomings with the current pipeline:
 
 
 
-###3. Suggest possible improvements to your pipeline
+### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to figure out a way to make the polygon dependent to the location of the two lane lines, so they can be self adjustable to different angles of the camera and the different forms shaped by the lane line.
 
